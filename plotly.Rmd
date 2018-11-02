@@ -1,0 +1,86 @@
+---
+title: "plotly"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+rmarkdown::render("dashboard_template.Rmd", output_format = "flex_dashboard")
+```
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(viridis)
+library(p8105.datasets)
+set.seed(1)
+library(plotly)
+library(flexdashboard)
+```
+### Instacart Online Grocery Shopping Dataset 2017
+```{r add_data}
+data("instacart")
+```
+
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### scatterplots 
+
+```{r popular_rank}
+aisle_rank =
+  instacart %>% 
+  group_by(aisle) %>% 
+  summarise(n = n()) %>% 
+  arrange((n)) %>%
+  mutate(rank = row_number(), aisle_r = factor(aisle, levels = c(aisle))) 
+
+aisle_rank %>% 
+  mutate(text_label = str_c("Aisle:", aisle, 'Number of items: ', n)) %>% 
+  plot_ly(x = ~rank, y = ~n, type = "scatter", mode = "markers",
+          alpha = 0.7, 
+          color = ~aisle_r,
+          text = ~text_label)
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### box plots
+
+```{r beverages_hour}
+beverages_hour =
+  instacart %>%
+  filter(department == "beverages") %>%
+  group_by(product_name) %>% 
+  count(n = n()) %>% 
+  arrange(desc(n)) %>% 
+  head(40)
+
+instacart %>%
+  filter(product_name %in% c(beverages_hour$product_name)) %>%
+  select(product_name, order_hour_of_day) %>% 
+  mutate(product_name = fct_reorder(product_name, order_hour_of_day)) %>% 
+    plot_ly(y = ~order_hour_of_day, color = ~product_name, type = "box",
+          colors = "Set2")
+```
+
+### bar plots
+amount the aisles with highest average reorderate, rank the number of sales amount
+```{r reorder_time}
+reorder_time = 
+  instacart %>% 
+  group_by(department, aisle) %>% 
+  mutate(n = n(), re = mean(reordered), t = mean(days_since_prior_order)) %>%
+  select(department, aisle, n, re, t) %>% 
+  distinct(department, aisle, n, re, t) %>% 
+  arrange(desc(re)) %>% 
+  head(30) %>% 
+  ungroup()
+
+reorder_time %>%   
+  mutate(aisle = fct_reorder(aisle, n)) %>% 
+  plot_ly(x = ~aisle, y = ~n, color = ~aisle, type = "bar", colors = "Set3")
+```

@@ -1,0 +1,38 @@
+---
+title: "Welcome to My page !"
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+---
+
+### I am a biostatistics student learning data science in R !
+
+Hi! I am Tricia Zhai. Born and raised in China. Now studying in Columbia University Mailman School of Public Health, in NYC. 
+Life is beautiful and I wish everybody have a health and happy life.
+I was in medicine, trying to help people and found out still too much is unknow. Now I study biostatistics, wish I can contribute my efforts to medical research in the future. I believe science and technology can make the world healthier and happier. Trying my best to learn as much as I can !
+
+<img src="image/me.jpg" style="width:50%">
+
+## I have recently leared plotly !
+check it [here](plotly.html)
+
+### Links:
+[Email](cz2544@cumc.columbia.edu)
+
+[Github](https://github.com/TriciaZhai)
+
+[Linkin](https://www.linkedin.com/in/chunxiao-zhai-71b655131/)
+
+[Resume](resume.pdf)
+
+
+
+
+
+
+
+
+
+
+

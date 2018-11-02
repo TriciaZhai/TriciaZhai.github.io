@@ -1,0 +1,61 @@
+---
+title: "About Me"
+---
+
+- __Name:__ Tricia Zhai
+- __Ocupation:__ "Student"
+- __Hobbies:__ Binge conflicting medical research news to avoid actually doing homework. 
+
+
+### About this site
+
+This started as a homework project in [p8105 data science](p8105.com) class. [Nick's site](http://nickstrayer.me/RMarkdown_Sites_tutorial/) helped me a lot. Codes are writed in Rmardown and Rstudio version is : 1.1.456 .
+
+### Me as a human
+as a kid:\
+
+<img src="image/kid.jpg" style="width:50%">
+
+as a runner:\
+
+<img src="image/run.jpg" style="width:50%">
+
+## What I did before
+My note:\
+
+<img src="image/IMG_0365.jpg" style="width:50%">
+
+My rat femoral AV fistula: \
+<img src="image/fistula.mp4" style="width:50%">
+
+## What I do now
+```{r plan_coming_week}
+library(tidyverse)
+today = Sys.Date()
+week = c(0:6) + today
+week_end_pool = 
+  tibble(
+  week_end = c("go to park", "do home work", "gym", "group study", "go to a musical","dinner party", "meal prep"))
+week_day_pool = 
+  tibble(
+  week_day = c("do home work", "gym", "group study", "go to lecture"))
+
+
+to_do = function(x)
+  {
+  if (weekdays(x) %in% c("Saturday", "Sunday"))
+    {
+    paste(sample_n(week_end_pool, 2), sep = ",")
+    #stop("weekend, yay!")
+    } 
+  else{
+   paste("go to class", sample_n(week_day_pool, 2), sep = ",")}
+  }
+
+output = vector("list", length = 7)
+for (i in 1:7) {
+  output[[i]] = to_do(week[[i]]) 
+}
+
+knitr::kable(tibble(weekdays(week), output)) 
+```
