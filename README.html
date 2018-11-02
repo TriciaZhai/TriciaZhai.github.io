@@ -11,7 +11,7 @@
 
 
 
-<title>About Me</title>
+<title></title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,9 +22,6 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
-<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
-<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -210,110 +207,13 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">About Me</h1>
 
 </div>
 
 
-<ul>
-<li><strong>Name:</strong> Tricia Zhai</li>
-<li><strong>Ocupation:</strong> “Student”</li>
-<li><strong>Hobbies:</strong> Binge conflicting medical research news to avoid actually doing homework.</li>
-</ul>
-<div id="about-this-site" class="section level3">
-<h3>About this site</h3>
-<p>This started as a homework project in <a href="p8105.com">p8105 data science</a> class. <a href="http://nickstrayer.me/RMarkdown_Sites_tutorial/">Nick’s site</a> helped me a lot. Codes are writed in Rmardown and Rstudio version is : 1.1.456 .</p>
-</div>
-<div id="me-as-a-human" class="section level3">
-<h3>Me as a human</h3>
-<p>as a kid:<br />
-<img src="image/kid.jpg" style="width:50%"></p>
-<p>as a runner:<br />
-<img src="image/run.jpg" style="width:50%"></p>
-</div>
-<div id="what-i-did-before" class="section level2">
-<h2>What I did before</h2>
-<p>My note:<br />
-<img src="image/IMG_0365.jpg" style="width:50%"></p>
-<p>My rat femoral AV fistula:<br />
-<img src="image/fistula.mp4" style="width:50%"></p>
-</div>
-<div id="what-i-do-now" class="section level2">
-<h2>What I do now</h2>
-<pre class="r"><code>library(tidyverse)</code></pre>
-<pre><code>## -- Attaching packages -------------------------------------------------------------------- tidyverse 1.2.1 --</code></pre>
-<pre><code>## v ggplot2 3.0.0     v purrr   0.2.5
-## v tibble  1.4.2     v dplyr   0.7.7
-## v tidyr   0.8.1     v stringr 1.3.1
-## v readr   1.1.1     v forcats 0.3.0</code></pre>
-<pre><code>## -- Conflicts ----------------------------------------------------------------------- tidyverse_conflicts() --
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()</code></pre>
-<pre class="r"><code>today = Sys.Date()
-week = c(0:6) + today
-week_end_pool = 
-  tibble(
-  week_end = c(&quot;go to park&quot;, &quot;do home work&quot;, &quot;gym&quot;, &quot;group study&quot;, &quot;go to a musical&quot;,&quot;dinner party&quot;, &quot;meal prep&quot;))
-week_day_pool = 
-  tibble(
-  week_day = c(&quot;do home work&quot;, &quot;gym&quot;, &quot;group study&quot;, &quot;go to lecture&quot;))
-
-
-to_do = function(x)
-  {
-  if (weekdays(x) %in% c(&quot;Saturday&quot;, &quot;Sunday&quot;))
-    {
-    paste(sample_n(week_end_pool, 2), sep = &quot;,&quot;)
-    #stop(&quot;weekend, yay!&quot;)
-    } 
-  else{
-   paste(&quot;go to class&quot;, sample_n(week_day_pool, 2), sep = &quot;,&quot;)}
-  }
-
-output = vector(&quot;list&quot;, length = 7)
-for (i in 1:7) {
-  output[[i]] = to_do(week[[i]]) 
-}
-
-knitr::kable(tibble(weekdays(week), output)) </code></pre>
-<table>
-<thead>
-<tr class="header">
-<th align="left">weekdays(week)</th>
-<th align="left">output</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Friday</td>
-<td align="left">go to class,c(“go to lecture”, “group study”)</td>
-</tr>
-<tr class="even">
-<td align="left">Saturday</td>
-<td align="left">c(“go to a musical”, “gym”)</td>
-</tr>
-<tr class="odd">
-<td align="left">Sunday</td>
-<td align="left">c(“gym”, “group study”)</td>
-</tr>
-<tr class="even">
-<td align="left">Monday</td>
-<td align="left">go to class,c(“group study”, “go to lecture”)</td>
-</tr>
-<tr class="odd">
-<td align="left">Tuesday</td>
-<td align="left">go to class,c(“do home work”, “group study”)</td>
-</tr>
-<tr class="even">
-<td align="left">Wednesday</td>
-<td align="left">go to class,c(“do home work”, “group study”)</td>
-</tr>
-<tr class="odd">
-<td align="left">Thursday</td>
-<td align="left">go to class,c(“go to lecture”, “do home work”)</td>
-</tr>
-</tbody>
-</table>
+<div id="triciazhai.github.io" class="section level1">
+<h1>TriciaZhai.github.io</h1>
+<p>website</p>
 </div>
 
 

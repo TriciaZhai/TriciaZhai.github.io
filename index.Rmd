@@ -14,7 +14,7 @@ I was in medicine, trying to help people and found out still too much is unknow.
 
 <img src="image/me.jpg" style="width:50%">
 
-## I have recently leared plotly !
+## I have recently learned plotly !
 check it [here](plotly.html)
 
 ### Links:
