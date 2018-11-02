@@ -9,9 +9,11 @@
 <meta name="generator" content="pandoc" />
 
 
+<meta name="author" content="Chunxiao Zhai" />
 
+<meta name="date" content="2018-10-26" />
 
-<title>About Me</title>
+<title>resume</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -210,110 +212,72 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">About Me</h1>
+<h1 class="title toc-ignore">resume</h1>
+<h4 class="author"><em>Chunxiao Zhai</em></h4>
+<h4 class="date"><em>10/26/2018</em></h4>
 
 </div>
 
 
-<ul>
-<li><strong>Name:</strong> Tricia Zhai</li>
-<li><strong>Ocupation:</strong> “Student”</li>
-<li><strong>Hobbies:</strong> Binge conflicting medical research news to avoid actually doing homework.</li>
-</ul>
-<div id="about-this-site" class="section level3">
-<h3>About this site</h3>
-<p>This started as a homework project in <a href="p8105.com">p8105 data science</a> class. <a href="http://nickstrayer.me/RMarkdown_Sites_tutorial/">Nick’s site</a> helped me a lot. Codes are writed in Rmardown and Rstudio version is : 1.1.456 .</p>
+<div id="tricia-zhai" class="section level2">
+<h2>Tricia Zhai</h2>
 </div>
-<div id="me-as-a-human" class="section level3">
-<h3>Me as a human</h3>
-<p>as a kid:<br />
-<img src="image/kid.jpg" style="width:50%"></p>
-<p>as a runner:<br />
-<img src="image/run.jpg" style="width:50%"></p>
+<div id="education" class="section level2">
+<h2>EDUCATION</h2>
 </div>
-<div id="what-i-did-before" class="section level2">
-<h2>What I did before</h2>
-<p>My note:<br />
-<img src="image/IMG_0365.jpg" style="width:50%"></p>
-<p>My rat femoral AV fistula:<br />
-<img src="image/fistula.mp4" style="width:50%"></p>
+<div id="columbia-university-mailman-school-of-public-health-new-york" class="section level1">
+<h1>Columbia University Mailman School of Public Health New York</h1>
+<p>Master of Biostatistics, Graduating May 2020</p>
 </div>
-<div id="what-i-do-now" class="section level2">
-<h2>What I do now</h2>
-<pre class="r"><code>library(tidyverse)</code></pre>
-<pre><code>## -- Attaching packages -------------------------------------------------------------------- tidyverse 1.2.1 --</code></pre>
-<pre><code>## v ggplot2 3.0.0     v purrr   0.2.5
-## v tibble  1.4.2     v dplyr   0.7.7
-## v tidyr   0.8.1     v stringr 1.3.1
-## v readr   1.1.1     v forcats 0.3.0</code></pre>
-<pre><code>## -- Conflicts ----------------------------------------------------------------------- tidyverse_conflicts() --
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()</code></pre>
-<pre class="r"><code>today = Sys.Date()
-week = c(0:6) + today
-week_end_pool = 
-  tibble(
-  week_end = c(&quot;go to park&quot;, &quot;do home work&quot;, &quot;gym&quot;, &quot;group study&quot;, &quot;go to a musical&quot;,&quot;dinner party&quot;, &quot;meal prep&quot;))
-week_day_pool = 
-  tibble(
-  week_day = c(&quot;do home work&quot;, &quot;gym&quot;, &quot;group study&quot;, &quot;go to lecture&quot;))
-
-
-to_do = function(x)
-  {
-  if (weekdays(x) %in% c(&quot;Saturday&quot;, &quot;Sunday&quot;))
-    {
-    paste(sample_n(week_end_pool, 2), sep = &quot;,&quot;)
-    #stop(&quot;weekend, yay!&quot;)
-    } 
-  else{
-   paste(&quot;go to class&quot;, sample_n(week_day_pool, 2), sep = &quot;,&quot;)}
-  }
-
-output = vector(&quot;list&quot;, length = 7)
-for (i in 1:7) {
-  output[[i]] = to_do(week[[i]]) 
-}
-
-knitr::kable(tibble(weekdays(week), output)) </code></pre>
-<table>
-<thead>
-<tr class="header">
-<th align="left">weekdays(week)</th>
-<th align="left">output</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Friday</td>
-<td align="left">go to class,c(“gym”, “group study”)</td>
-</tr>
-<tr class="even">
-<td align="left">Saturday</td>
-<td align="left">c(“group study”, “dinner party”)</td>
-</tr>
-<tr class="odd">
-<td align="left">Sunday</td>
-<td align="left">c(“dinner party”, “gym”)</td>
-</tr>
-<tr class="even">
-<td align="left">Monday</td>
-<td align="left">go to class,c(“gym”, “do home work”)</td>
-</tr>
-<tr class="odd">
-<td align="left">Tuesday</td>
-<td align="left">go to class,c(“go to lecture”, “group study”)</td>
-</tr>
-<tr class="even">
-<td align="left">Wednesday</td>
-<td align="left">go to class,c(“group study”, “gym”)</td>
-</tr>
-<tr class="odd">
-<td align="left">Thursday</td>
-<td align="left">go to class,c(“group study”, “go to lecture”)</td>
-</tr>
-</tbody>
-</table>
+<div id="fudan-university-shanghai-medical-center-shanghai-china" class="section level1">
+<h1>Fudan University Shanghai Medical Center Shanghai, China</h1>
+<p>Bachelor of Medicine (MD equivalent) Graduated July 2013 • Eisai Pharma Scholarship,2012 • Medical Student of the Year (Nomination Award), 2011 2009-2011 • People’s Scholarship, Shanghai 2016 - 2017</p>
+<div id="skills" class="section level2">
+<h2>SKILLS</h2>
+<p>Computer : R, SAS, SPSS, Excel, Latex, Word Language : English(fluent), Chinese(Native)</p>
+</div>
+<div id="experience" class="section level2">
+<h2>EXPERIENCE</h2>
+</div>
+</div>
+<div id="reeven-capital" class="section level1">
+<h1>Reeven Capital</h1>
+<p>Healthcare investment Department: Analyst 2016 - 2017</p>
+<p>• Investigated four biomedical startups in China (Pre-CFDA Type II Device, Ge- netic diagnostics, Innovative medication in infectious disease, CAR-T therapy)</p>
+<p>• Conducteded in-field due diligence, produced reports on domestic and interna- tional investment targets, participated in 14 industry conferences.</p>
+</div>
+<div id="shanghai-jiaotong-university-school-of-medicine-affiliated-9th-peoples-hospital" class="section level1">
+<h1>Shanghai Jiaotong University School of Medicine Affiliated 9th people’s hospital</h1>
+<p>Plastic and Reconstructive Surgery Department: Surgical Resident 2013 - 2016</p>
+<p>• Trained in inpatient and outpatient settings. Focused in scar treatment, recon- structive microsurgery and aesthetic laser surgery.</p>
+<p>• Rotated in Ophthalmology/Orbital Surgery, ENT and Dermatology .</p>
+<p>• Designed an conducted clinical study in evaluating non-ablative laser therapy for keloids with novel imaging system.</p>
+<p>• Conducted research in low-frequency ultrasound assisted liposomal drug deliv- ery in animal models.</p>
+</div>
+<div id="fudan-university-shanghai-medical-center" class="section level1">
+<h1>Fudan University Shanghai Medical Center</h1>
+<p>Chunmin Liang’s Lab, Department of Anatomy and histology: Undergraduate Student Researcher 2009 - 2012</p>
+<p>• Presented regularly in journal clubs, seminars. Focused on topics in innate immune system function in cancer and animal model in Alzheimer’s disease.</p>
+<p>• Participated regularly in animal experiments and cell culture.</p>
+<div id="r-markdown" class="section level2">
+<h2>R Markdown</h2>
+<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
+<p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
+<pre class="r"><code>summary(cars)</code></pre>
+<pre><code>##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00</code></pre>
+</div>
+<div id="including-plots" class="section level2">
+<h2>Including Plots</h2>
+<p>You can also embed plots, for example:</p>
+<p><img src="resume_files/figure-html/pressure-1.png" width="672" /></p>
+<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
+</div>
 </div>
 
 

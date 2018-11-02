@@ -1,14 +1,10 @@
 ---
-title: "plotly"
+title: "Plotly: Instacart Online Grocery Shopping Dataset 2017"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
     vertical_layout: fill
 ---
-
-```{r setup, include=FALSE}
-rmarkdown::render("dashboard_template.Rmd", output_format = "flex_dashboard")
-```
 
 ```{r setup, include=FALSE}
 library(tidyverse)
@@ -18,7 +14,7 @@ set.seed(1)
 library(plotly)
 library(flexdashboard)
 ```
-### Instacart Online Grocery Shopping Dataset 2017
+
 ```{r add_data}
 data("instacart")
 ```
@@ -26,7 +22,6 @@ data("instacart")
 
 Column {data-width=650}
 -----------------------------------------------------------------------
-
 ### scatterplots 
 
 ```{r popular_rank}
