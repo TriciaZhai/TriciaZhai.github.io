@@ -33,29 +33,25 @@ My rat femoral AV fistula: \
 library(tidyverse)
 today = Sys.Date()
 week = c(0:6) + today
-week_end_pool = 
-  tibble(
-  week_end = c("go to park", "do home work", "gym", "group study", "go to a musical","dinner party", "meal prep"))
-week_day_pool = 
-  tibble(
-  week_day = c("do home work", "gym", "group study", "go to lecture"))
+week_end = c("go to park", "do home work", "gym", "group study", "go to a musical","dinner party", "meal prep")
+week_day = c("do home work", "gym", "group study", "go to lecture")
 
 
 to_do = function(x)
   {
   if (weekdays(x) %in% c("Saturday", "Sunday"))
     {
-    paste(sample_n(week_end_pool, 2), sep = ",")
+   sample(week_end, 2)
     #stop("weekend, yay!")
     } 
   else{
-   paste("go to class", sample_n(week_day_pool, 2), sep = ",")}
+   c("go to class", sample(week_day, 2))}
   }
 
-output = vector("list", length = 7)
+output = vector("tibble", length = 7)
 for (i in 1:7) {
   output[[i]] = to_do(week[[i]]) 
 }
 
-knitr::kable(tibble(weekdays(week), output)) 
+knitr::kable(tibble(weekdays(week), paste(output))) 
 ```
